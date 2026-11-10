@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MISTICA BAR</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="pantalla">
+
+    <div class="mitad arriba">
+        <a href="cocina.html" class="boton cocina">
+            COCINA
+        </a>
+    </div>
+
+    <div class="mitad abajo">
+        <a href="cocteleria.html" class="boton cocteleria">
+            COCTELERÍA
+        </a>
+    </div>
+
+    <div class="logo-contenedor">
+        <img src="Imgs/logo3.png" class="logo">
+    </div>
+
+</div>
+
+<!-- MODAL PROMOS -->
+<div id="promo-modal">
+
+  <div class="promo-box">
+
+    <button id="cerrar-modal">&times;</button>
+
+    <video id="promo-video" autoplay muted loop playsinline>
+      <source src="" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+
+  </div>
+
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+
+    const modal=document.getElementById("promo-modal");
+    const cerrar=document.getElementById("cerrar-modal");
+    const video=document.getElementById("promo-video");
+    const source=video.querySelector("source");
+
+    const dia=new Date().getDay();
+
+    let archivo="";
+
+    switch(dia){
+
+        case 1:
+            archivo="videos/cheese.mp4";
+            break;
+
+
+
+        case 3:
+            archivo="videos/cheese.mp4";
+            break;
+
+     
+
+        default:
+            return;
+    }
+
+    source.src=archivo;
+
+    video.load();
+
+    modal.style.display="flex";
+
+    cerrar.addEventListener("click",()=>{
+
+        video.pause();
+        modal.style.display="none";
+
+    });
+
+    modal.addEventListener("click",(e)=>{
+
+        if(e.target===modal){
+
+            video.pause();
+            modal.style.display="none";
+
+        }
+
+    });
+
+});
+</script>
+
+
+</body>
+</html>

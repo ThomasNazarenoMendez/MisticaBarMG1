@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body */
+.fondo-sitio {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  background-color: #000;
+}
+
+
+/* NAV */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.logo {
+  height: 40px;
+}
+
+/* HAMBURGUESA */
+.hamburger {
+  width: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  margin: 6px 0;
+  transition: all 0.3s ease;
+}
+
+/* animación */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* MENU */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #000;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+}
+
+.tituloPrincipal {
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+  color: #fff;
+  margin-top: 2rem;
+  font-size: 50px;
+  margin-bottom: 2rem;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  min-height: 100vh;
+  background-image: url("../Imgs/fondo2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  image-rendering: auto;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* TÍTULO PRINCIPAL */
+.tituloPrincipal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin: 2rem 0;
+  font-size: 50px;
+}
+
+/* CONTENEDOR DE SECCIONES */
+.listaSeccion {
+  margin: 1rem;
+  margin-bottom: 20px;
+  border: 2px solid #c59d5f;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+/* TÍTULO DE SECCIÓN */
+.tituloSecciones2 {
+  color: #c59d5f;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid #c59d5f;
+  padding-bottom: 5px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.tituloSecciones {
+  color: #c59d5f;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid #c59d5f;
+  padding-bottom: 5px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 27px;
+}
+
+
+/* LISTA */
+.lista-bebidas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-bebidas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  flex-wrap: wrap;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 70%;
+  min-width: 0;
+}
+
+.nombre {
+  font-weight: bold;
+  font-size: 22px;
+  color: #fff;
+}
+
+.descripcion {
+  font-size: 18px;
+  color: #ccc;
+  margin-top: 3px;
+}
+
+.descripcion2 {
+  font-size: 15px;
+  color: #ccc;
+  margin-top: 3px;
+}
+
+.precio {
+  font-weight: bold;
+  font-size: 22px;
+  color: #fff;
+  flex: 0 0 auto;
+  margin-left: 10px;
+}
+
+/* Ítems con múltiples precios */
+.li-doble-precio .descripciones-precios {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.descripcion-item {
+  display: grid;
+  grid-template-columns: 1fr auto; /* descripción ocupa todo lo que puede, precio se ajusta al contenido */
+  align-items: start; /* alinea el precio con la primera línea de la descripción */
+  gap: 10px; /* espacio entre descripción y precio */
+}
+
+.descripcion-item .descripcion {
+  color: #ccc;
+  font-size: 20px;
+}
+
+.descripcion-item .precio {
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+}
+
+/* MOBILE */
+@media screen and (max-width: 600px) {
+  .lista-bebidas li,
+  .li-doble-precio {
+    flex-wrap: wrap; /* mantiene precio al lado si cabe */
+  }
+  
+  .descripcion-item .descripcion {
+    font-size: 16px;
+  }
+  .descripcion-item .precio {
+    font-size: 15px;
+  }
+  .nombre {
+    font-size: 20px;
+  }
+  .precio {
+    font-size: 20px;
+  }
+}
+
+/* FIX DEFINITIVO Safari – fondo pixelado */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+    image-rendering: auto;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  background: #fff;
+  color: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-left: 20px;
+}
+
+/* IZQUIERDA */
+.footer-left p {
+  font-size: 15px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* DERECHA ICONOS */
+.footer-right {
+  display: flex;
+
+}
+
+/* ICONOS */
+.footer-right img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* HOVER */
+.footer-right a:hover img {
+  opacity: 0.8;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .footer-right img {
+    width: 36px;
+    height: 36px;
+  }
+}
